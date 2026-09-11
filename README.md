@@ -337,7 +337,9 @@ WHERE ProductID = 101;
 ```
 
 ------------------------------------------------------------------------
+## 🎥 Video Demonstration
 
+[![Watch Video](https://img.shields.io/badge/🎥-Watch_Video-red?style=for-the-badge)](video)
 # 📈 Business Questions
 
 The database can be used to answer questions such as:
