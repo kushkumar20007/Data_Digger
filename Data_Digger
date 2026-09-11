@@ -63,22 +63,7 @@ VALUES
 (4, 'Priya', 'priya@gmail.com', 'Delhi'),
 (5, 'Aman', 'aman@gmail.com', 'Mumbai');
 
---all column 
-SELECT * FROM Customers;
-
---data ko Update 
-UPDATE Customers
-SET Address = 'Nikol, Ahmedabad'
-WHERE CustomerID = 2;
-
-
-DELETE FROM Customers
-WHERE CustomerID = 5;
-
-SELECT *
-FROM Customers
-WHERE Name = 'Alice';
-
+--Insert table product
 INSERT INTO Products
 (ProductID, ProductName, Price, Stock)
 VALUES
@@ -88,28 +73,8 @@ VALUES
 (104, 'Headphones', 1800.00, 15),
 (105, 'USB Cable', 500.00, 0);
 
-SELECT *
-FROM Products
-ORDER BY Price DESC;
 
-UPDATE Products
-SET Price = 1500.00
-WHERE ProductID = 102;
-
-DELETE FROM Products
-WHERE ProductID = 105
-AND Stock = 0;
-
-SELECT *
-FROM Products
-WHERE Price BETWEEN 500 AND 2000;
-
-SELECT
-    MAX(Price) AS Most_Expensive,
-    MIN(Price) AS Cheapest
-FROM Products;
-
-
+--insert order table
 INSERT INTO Orders
 (OrderID, CustomerID, OrderDate, TotalAmount)
 VALUES
@@ -119,26 +84,7 @@ VALUES
 (1004, 4, DATE_SUB(CURDATE(), INTERVAL 20 DAY), 55700.00),
 (1005, 1, DATE_SUB(CURDATE(), INTERVAL 40 DAY), 700.00);
 
-SELECT *
-FROM Orders
-WHERE CustomerID = 1;
 
-UPDATE Orders
-SET TotalAmount = 57000.00
-WHERE OrderID = 1001;
-
-DELETE FROM Orders
-WHERE OrderID = 1005;
-
-SELECT *
-FROM Orders
-WHERE OrderDate >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
-
-SELECT
-    MAX(TotalAmount) AS Highest_Order,
-    MIN(TotalAmount) AS Lowest_Order,
-    AVG(TotalAmount) AS Average_Order
-FROM Orders;
 
 INSERT INTO OrderDetails
 (OrderDetailID, OrderID, ProductID, Quantity, SubTotal)
@@ -151,9 +97,35 @@ VALUES
 (6, 1004, 101, 1, 55000.00),
 (7, 1004, 103, 1, 700.00);
 
-SELECT *
-FROM OrderDetails
-WHERE OrderID = 1001;
+
+--all column 
+SELECT * FROM Customers;
+
+SELECT * FROM Customers WHERE Name = 'Alice';
+
+SELECT * FROM Products ORDER BY Price DESC;
+
+SELECT * FROM Products WHERE Price BETWEEN 500 AND 2000;
+
+SELECT
+    MAX(Price) AS Most_Expensive,
+    MIN(Price) AS Cheapest
+FROM Products;
+
+
+SELECT * FROM Orders WHERE CustomerID = 1;
+
+SELECT * FROM Orders WHERE OrderDate >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
+
+SELECT
+    MAX(TotalAmount) AS Highest_Order,
+    MIN(TotalAmount) AS Lowest_Order,
+    AVG(TotalAmount) AS Average_Order
+FROM Orders;
+
+
+SELECT * FROM OrderDetails WHERE OrderID = 1001;
+
 
 SELECT SUM(SubTotal) AS Total_Revenue
 FROM OrderDetails;
@@ -182,4 +154,38 @@ SELECT
 FROM OrderDetails
 WHERE ProductID = 104
 GROUP BY ProductID;
+
+
+--data ko Update 
+UPDATE Customers
+SET Address = 'Nikol, Ahmedabad'
+WHERE CustomerID = 2;
+
+
+UPDATE Products
+SET Price = 1500.00
+WHERE ProductID = 102;
+
+
+UPDATE Orders
+SET TotalAmount = 57000.00
+WHERE OrderID = 1001;
+
+DELETE FROM Customers
+WHERE CustomerID = 5;
+
+
+
+DELETE FROM Products
+WHERE ProductID = 105
+AND Stock = 0;
+
+
+DELETE FROM Orders
+WHERE OrderID = 1005;
+
+
+
+
+
 
