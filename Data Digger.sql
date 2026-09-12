@@ -1,14 +1,13 @@
 CREATE DATABASE IF NOT EXISTS data_digger;
 USE data_digger;
 
--- Tables ko dobara run karne ke liye
+
 DROP TABLE IF EXISTS OrderDetails;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Products;
 DROP TABLE IF EXISTS Customers;
 
 
--- 1. CUSTOMERS TABLE
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL,
@@ -17,7 +16,6 @@ CREATE TABLE Customers (
 );
 
 
--- 2. PRODUCTS TABLE
 CREATE TABLE Products (
     ProductID INT PRIMARY KEY,
     ProductName VARCHAR(100) NOT NULL,
@@ -26,7 +24,6 @@ CREATE TABLE Products (
 );
 
 
--- 3. ORDERS TABLE
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     CustomerID INT,
@@ -38,7 +35,6 @@ CREATE TABLE Orders (
 );
 
 
--- 4. ORDER DETAILS TABLE
 CREATE TABLE OrderDetails (
     OrderDetailID INT PRIMARY KEY,
     OrderID INT,
@@ -53,7 +49,6 @@ CREATE TABLE OrderDetails (
     REFERENCES Products(ProductID)
 );
 
---table insert karne ke liye
 INSERT INTO Customers
 (CustomerID, Name, Email, Address)
 VALUES
@@ -63,7 +58,6 @@ VALUES
 (4, 'Priya', 'priya@gmail.com', 'Delhi'),
 (5, 'Aman', 'aman@gmail.com', 'Mumbai');
 
---Insert table product
 INSERT INTO Products
 (ProductID, ProductName, Price, Stock)
 VALUES
@@ -74,7 +68,6 @@ VALUES
 (105, 'USB Cable', 500.00, 0);
 
 
---insert order table
 INSERT INTO Orders
 (OrderID, CustomerID, OrderDate, TotalAmount)
 VALUES
@@ -98,7 +91,6 @@ VALUES
 (7, 1004, 103, 1, 700.00);
 
 
---all column 
 SELECT * FROM Customers;
 
 SELECT * FROM Customers WHERE Name = 'Alice';
