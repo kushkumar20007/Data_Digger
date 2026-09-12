@@ -84,7 +84,7 @@ Products (1) ──< OrderDetails (many)
 ---
 ## 🎥 Video Demonstration
 
-[![Watch Video](https://img.shields.io/badge/🎥-Watch_Video-red?style=for-the-badge)](video)
+[![Watch Video](https://img.shields.io/badge/🎥-Watch_Video-red?style=for-the-badge)](https://drive.google.com/file/d/13LwT6KuQNcvGsNKGj6dXQN4nBAsPU3RU/view?usp=sharing)
 
 ## 📊 Initial Seed Data
 
