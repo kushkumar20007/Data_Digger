@@ -578,3 +578,6 @@ WHERE OrderID = 1005;
 - Add stored procedures for placing a new order end-to-end
 - Add views for common reports (e.g., monthly revenue, low-stock alerts)
 - Add indexes on `Orders.CustomerID` and `OrderDetails.OrderID` for performance
+
+👨‍💻 Author
+Name: Kush Kumar
