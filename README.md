@@ -82,6 +82,9 @@ Products (1) ──< OrderDetails (many)
 4. All date-based outputs below are calculated relative to **CURDATE() = 2026-09-11**. Since `OrderDate` uses `DATE_SUB(CURDATE(), INTERVAL n DAY)`, your actual output dates will shift with the day you run the script — only the *day-offset logic* stays the same.
 
 ---
+## 🎥 Video Demonstration
+
+[![Watch Video](https://img.shields.io/badge/🎥-Watch_Video-red?style=for-the-badge)](video)
 
 ## 📊 Initial Seed Data
 
