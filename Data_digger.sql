@@ -17,16 +17,7 @@ CREATE TABLE Customers (
 );
 
 
--- 2. PRODUCTS TABLE
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY,
-    ProductName VARCHAR(100) NOT NULL,
-    Price DECIMAL(10,2),
-    Stock INT
-);
-
-
--- 3. ORDERS TABLE
+-- 2. ORDERS TABLE
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     CustomerID INT,
@@ -37,6 +28,13 @@ CREATE TABLE Orders (
     REFERENCES Customers(CustomerID)
 );
 
+-- 3. PRODUCTS TABLE
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100) NOT NULL,
+    Price DECIMAL(10,2),
+    Stock INT
+);
 
 -- 4. ORDER DETAILS TABLE
 CREATE TABLE OrderDetails (
